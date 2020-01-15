@@ -56,27 +56,15 @@ for (i in seq_along(experiments)) {
   experiments[[i]]$beast2_options$rng_seed <- rng_seed
 }
 
-# Make the MCMCs shorter
-for (i in seq_along(experiments)) {
-  experiments[[i]]$inference_model$mcmc$chain_length <- 500000
-  experiments[[i]]$inference_model$mcmc$treelog$log_every <- 50
-  experiments[[i]]$inference_model$mcmc$tracelog$log_every <- 50
+# Shorter on Travis
+if (is_on_travis()) {
+  for (i in seq_along(experiments)) {
+    experiments[[i]]$inference_model$mcmc$chain_length <- 3000
+    experiments[[i]]$inference_model$mcmc$store_every <- 1000
+  }
 }
 
 check_experiments(experiments)
-
-# Testing
-# if (beastier::is_on_ci()) {
-#   experiments <- experiments[1:3]
-#   for (i in seq_along(experiments)) {
-#     experiments[[i]]$inference_model$mcmc <- create_mcmc(chain_length = 3000, store_every = 1000)
-#     experiments[[i]]$est_evidence_mcmc <- create_mcmc_nested_sampling(
-#       chain_length = 3000,
-#       store_every = 1000,
-#       epsilon = 100.0
-#     )
-#   }
-# }
 
 twinning_params <- create_twinning_params(
   rng_seed_twin_tree = rng_seed,
