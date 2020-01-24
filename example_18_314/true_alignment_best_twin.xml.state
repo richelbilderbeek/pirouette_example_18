@@ -1,0 +1,28 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:twin_alignment'>(((0:0.27940013374213624,1:0.27940013374213624)6:0.8053540735456172,((3:0.058701229043966324,4:0.058701229043966324)8:0.18538675525482917,5:0.2440879842987955)9:0.8406662229889579)7:2.823541957757862,2:3.9082961650456154)10:0.0</statenode>
+<statenode id='kappa.s:twin_alignment'>kappa.s:twin_alignment[1 1] (0.0,Infinity): 0.9584308892746135 </statenode>
+<statenode id='freqParameter.s:twin_alignment'>freqParameter.s:twin_alignment[4 1] (0.0,1.0): 0.32958481799449035 0.19809839022680634 0.2558704386267525 0.21644635315195168 </statenode>
+<statenode id='ucldStdev.c:twin_alignment'>ucldStdev.c:twin_alignment[1 1] (0.0,Infinity): 0.2008384191154751 </statenode>
+<statenode id='rateCategories.c:twin_alignment'>rateCategories.c:twin_alignment[10 1] (0,9): 2 1 9 1 8 4 0 8 1 4 </statenode>
+<statenode id='ePopSize.t:twin_alignment'>ePopSize.t:twin_alignment[1 1] (0.0,Infinity): 2.018281549327459 </statenode>
+<statenode id='growthRate.t:twin_alignment'>growthRate.t:twin_alignment[1 1] (-Infinity,Infinity): 0.0689396449728239 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"ePopSizeScaler.t:twin_alignment","p":0.2225482122581194,"accept":74622,"reject":195056,"acceptFC":73842,"rejectFC":194884,"rejectIv":0,"rejectOp":0},
+{"id":"GrowthRateRandomWalk.t:twin_alignment","p":5.138930621828989,"accept":68292,"reject":201673,"acceptFC":67598,"rejectFC":201416,"rejectIv":0,"rejectOp":0},
+{"id":"CoalescentExponentialTreeScaler.t:twin_alignment","p":0.5255561399213967,"accept":61318,"reject":208074,"acceptFC":61126,"rejectFC":207328,"rejectIv":0,"rejectOp":0},
+{"id":"CoalescentExponentialTreeRootScaler.t:twin_alignment","p":0.3766029326602846,"accept":48681,"reject":221357,"acceptFC":48445,"rejectFC":220620,"rejectIv":47285,"rejectOp":47285},
+{"id":"CoalescentExponentialUniformOperator.t:twin_alignment","p":"NaN","accept":701956,"reject":1995435,"acceptFC":699322,"rejectFC":1988165,"rejectIv":0,"rejectOp":0},
+{"id":"CoalescentExponentialSubtreeSlide.t:twin_alignment","p":1.2800496903028649,"accept":107341,"reject":1240813,"acceptFC":106835,"rejectFC":1236214,"rejectIv":540344,"rejectOp":540344},
+{"id":"CoalescentExponentialNarrow.t:twin_alignment","p":"NaN","accept":311146,"reject":1038078,"acceptFC":309988,"rejectFC":1034386,"rejectIv":0,"rejectOp":0},
+{"id":"CoalescentExponentialWide.t:twin_alignment","p":"NaN","accept":8262,"reject":261577,"acceptFC":8235,"rejectFC":260663,"rejectIv":149637,"rejectOp":149637},
+{"id":"CoalescentExponentialWilsonBalding.t:twin_alignment","p":"NaN","accept":3063,"reject":267335,"acceptFC":3053,"rejectFC":266443,"rejectIv":131584,"rejectOp":131584},
+{"id":"KappaScaler.s:twin_alignment","p":0.2626855028236326,"accept":2330,"reject":6546,"acceptFC":2310,"rejectFC":6526,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:twin_alignment","p":0.11410947071490009,"accept":2743,"reject":6244,"acceptFC":2716,"rejectFC":6238,"rejectIv":0,"rejectOp":0},
+{"id":"ucldStdevScaler.c:twin_alignment","p":0.1659448187089016,"accept":76298,"reject":193380,"acceptFC":75617,"rejectFC":193053,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesRandomWalk.c:twin_alignment","p":"NaN","accept":514372,"reject":385332,"acceptFC":512521,"rejectFC":383936,"rejectIv":358888,"rejectOp":358888},
+{"id":"CategoriesSwapOperator.c:twin_alignment","p":"NaN","accept":757193,"reject":141845,"acceptFC":754245,"rejectFC":141390,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesUniform.c:twin_alignment","p":"NaN","accept":787884,"reject":111755,"acceptFC":784924,"rejectFC":111415,"rejectIv":0,"rejectOp":0}
+]}
+-->
