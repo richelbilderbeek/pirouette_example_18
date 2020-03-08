@@ -10,7 +10,7 @@ library(pirouette)
 library(beautier)
 
 # Constants
-is_testing <- is_on_travis()
+is_testing <- is_on_ci()
 example_no <- 18
 rng_seed <- 314
 folder_name <- file.path(paste0("example_", example_no, "_", rng_seed))
