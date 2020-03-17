@@ -2,43 +2,67 @@
 #
 # * phylogeny: fictional
 # * pirouette setup: standard
+# * always the same tree
 #
 # Other examples can be found 
 # at https://github.com/richelbilderbeek/pirouette_examples 
 #
 library(pirouette)
 library(beautier)
+library(beastier)
+library(testthat)
+library(ggplot2)
 
 # Constants
-is_testing <- is_on_ci()
 example_no <- 18
 rng_seed <- 314
-folder_name <- file.path(paste0("example_", example_no, "_", rng_seed))
-
-# Create phylogeny
-phylogeny <- ape::read.tree(
-  text = "(((A:8, B:8):1, C:9):1, ((D:8, E:8):1, F:9):1);"
-)
-
-# Setup pirouette
-pir_params <- create_std_pir_params(
-  folder_name = folder_name
-)
+crown_age <- 10
+n_phylogenies <- 5
+folder_name <- paste0("example_", example_no)
+is_testing <- is_on_ci()
 if (is_testing) {
-  pir_params <- shorten_pir_params(pir_params)
+  n_phylogenies <- 2
 }
 
-# Run pirouette
-pir_out <- pir_run(
-  phylogeny,
-  pir_params = pir_params
-)
+# Create phylogenies
+phylogenies <- list()
+for (i in seq_len(n_phylogenies)) {
+  phylogenies[[i]] <- ape::read.tree(
+    text = "(((A:8, B:8):1, C:9):1, ((D:8, E:8):1, F:9):1);"
+  )
+}
+expect_equal(length(phylogenies), n_phylogenies)
 
-# Save results
-pir_save(
-  phylogeny = phylogeny,
-  pir_params = pir_params,
-  pir_out = pir_out,
+# Create pirouette parameter sets
+pir_paramses <- create_std_pir_paramses(
+  n = length(phylogenies),
   folder_name = folder_name
 )
+expect_equal(length(pir_paramses), n_phylogenies)
+if (is_testing) {
+    pir_paramses <- shorten_pir_paramses(pir_paramses)
+}
+
+# Do the runs
+pir_outs <- pir_runs(
+  phylogenies = phylogenies,
+  pir_paramses = pir_paramses
+)
+
+# Save summary
+pir_plots(pir_outs) +
+  ggtitle(paste("Number of replicates: ", n_phylogenies)) +
+  ggsave(file.path(folder_name, "errors.png"), width = 7, height = 7)
+
+# Save individual runs
+expect_equal(length(pir_paramses), length(pir_outs))
+expect_equal(length(pir_paramses), length(phylogenies))
+for (i in seq_along(pir_outs)) {
+  pir_save(
+    phylogeny = phylogenies[[i]],
+    pir_params = pir_paramses[[i]],
+    pir_out = pir_outs[[i]],
+    folder_name = dirname(pir_paramses[[i]]$alignment_params$fasta_filename)
+  )
+}
 
