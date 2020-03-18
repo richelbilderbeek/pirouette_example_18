@@ -7,6 +7,31 @@ Branch   |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)         
 
 A [pirouette example](https://github.com/richelbilderbeek/pirouette_examples).
 
+## Running on Peregrine
+
+Install `pirouette` using the [peregrine](https://github.com/richelbilderbeek/peregrine)
+bash and R scripts.
+
+Then, in the main folder of this repo, type:
+
+```
+sbatch scripts/rerun.sh
+```
+
+## Related settings
+
+ * [TODO]
+
 ## Results
 
-![](example_18_314/errors.png)
+![](example_18/errors.png)
+
+### Individual results
+
+![](example_18/314/errors.png)
+![](example_18/315/errors.png)
+![](example_18/316/errors.png)
+![](example_18/317/errors.png)
+![](example_18/318/errors.png)
+
+
