@@ -1,0 +1,18 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:alignment'>(((0:0.9949981691070793,(3:0.9237941498827793,(4:0.826934994834187,5:0.826934994834187)6:0.09685915504859233)8:0.07120401922429997)7:0.03212848938235302,2:1.0271266584894323)9:0.05950326940387174,1:1.086629927893304)10:0.0</statenode>
+<statenode id='BDBirthRate.t:alignment'>BDBirthRate.t:alignment[1 1] (0.0,10000.0): 0.4908659220589753 </statenode>
+<statenode id='BDDeathRate.t:alignment'>BDDeathRate.t:alignment[1 1] (0.0,1.0): 0.08291762724138789 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"BirthRateScaler.t:alignment","p":0.19007636796485203,"accept":104597,"reject":279958,"acceptFC":103666,"rejectFC":279802,"rejectIv":0,"rejectOp":0},
+{"id":"DeathRateScaler.t:alignment","p":0.10607037359172687,"accept":80469,"reject":303076,"acceptFC":79543,"rejectFC":302901,"rejectIv":165783,"rejectOp":165783},
+{"id":"BirthDeathTreeScaler.t:alignment","p":0.7609371573924112,"accept":67644,"reject":316380,"acceptFC":67553,"rejectFC":315367,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathTreeRootScaler.t:alignment","p":0.6298486614501041,"accept":36856,"reject":346783,"acceptFC":36787,"rejectFC":345727,"rejectIv":126662,"rejectOp":126662},
+{"id":"BirthDeathUniformOperator.t:alignment","p":"NaN","accept":1576673,"reject":2268815,"acceptFC":1572005,"rejectFC":2262224,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathSubtreeSlide.t:alignment","p":0.4670455369578847,"accept":246852,"reject":1678426,"acceptFC":246490,"rejectFC":1673205,"rejectIv":374099,"rejectOp":374099},
+{"id":"BirthDeathNarrow.t:alignment","p":"NaN","accept":737085,"reject":1187417,"acceptFC":734954,"rejectFC":1184077,"rejectIv":0,"rejectOp":0},
+{"id":"BirthDeathWide.t:alignment","p":"NaN","accept":25458,"reject":359120,"acceptFC":25379,"rejectFC":358076,"rejectIv":213826,"rejectOp":213826},
+{"id":"BirthDeathWilsonBalding.t:alignment","p":"NaN","accept":13427,"reject":370965,"acceptFC":13396,"rejectFC":369890,"rejectIv":188258,"rejectOp":188258}
+]}
+-->
