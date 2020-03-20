@@ -24,14 +24,5 @@ sbatch scripts/rerun.sh
 
 ## Results
 
-![](example_18/errors.png)
-
-### Individual results
-
-![](example_18/314/errors.png)
-![](example_18/315/errors.png)
-![](example_18/316/errors.png)
-![](example_18/317/errors.png)
-![](example_18/318/errors.png)
-
+![](errors.png)
 
