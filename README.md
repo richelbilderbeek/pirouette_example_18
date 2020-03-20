@@ -20,7 +20,7 @@ sbatch scripts/rerun.sh
 
 ## Related settings
 
- * [TODO]
+ * [Use same number of mutations (instead of equal mutation rate)](https://github.com/richelbilderbeek/pirouette_example_31)
 
 ## Results
 
