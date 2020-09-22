@@ -22,6 +22,7 @@ folder_name <- paste0("example_", example_no)
 is_testing <- is_on_ci()
 if (is_testing) {
   n_phylogenies <- 2
+  crown_age <- 3
 }
 
 # Create phylogenies
@@ -40,7 +41,7 @@ pir_paramses <- create_std_pir_paramses(
 )
 expect_equal(length(pir_paramses), n_phylogenies)
 if (is_testing) {
-    pir_paramses <- shorten_pir_paramses(pir_paramses)
+  pir_paramses <- shorten_pir_paramses(pir_paramses)
 }
 
 # Do the runs
