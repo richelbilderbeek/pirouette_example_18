@@ -22,7 +22,7 @@ folder_name <- paste0("example_", example_no)
 is_testing <- is_on_ci()
 if (is_testing) {
   n_phylogenies <- 2
-  crown_age <- 3
+  crown_age <- 2
 }
 
 # Create phylogenies
@@ -31,6 +31,11 @@ for (i in seq_len(n_phylogenies)) {
   phylogenies[[i]] <- ape::read.tree(
     text = "(((A:8, B:8):1, C:9):1, ((D:8, E:8):1, F:9):1);"
   )
+  if (is_testing) {
+    phylogenies[[i]] <- ape::read.tree(
+      text = "((A:1, B:1):1, C:2):1;"
+    )
+  }
 }
 expect_equal(length(phylogenies), n_phylogenies)
 
